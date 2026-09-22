@@ -1,6 +1,6 @@
 # TaskFlow
 
-[![Build APK](https://github.com/YOUR_USERNAME/todo-app/actions/workflows/build-apk.yml/badge.svg)](https://github.com/YOUR_USERNAME/todo-app/actions/workflows/build-apk.yml)
+[![Build APK](https://github.com/Omprakash267/TaskFlow/actions/workflows/build-apk.yml/badge.svg)](https://github.com/Omprakash267/TaskFlow/actions/workflows/build-apk.yml)
 
 A modern, production-ready task management application built with React, Local-first Storage Engine, and Capacitor for Android.
 
@@ -8,7 +8,7 @@ A modern, production-ready task management application built with React, Local-f
 
 ### Android APK
 
-1. Go to the [**Releases**](https://github.com/YOUR_USERNAME/todo-app/releases/latest) page
+1. Go to the [**Releases**](https://github.com/Omprakash267/TaskFlow/releases/latest) page
 2. Download **`TaskFlow.apk`**
 3. Open the APK on your Android device
 4. If prompted, enable **"Install from unknown sources"** in your device settings
@@ -21,7 +21,7 @@ A modern, production-ready task management application built with React, Local-f
 You can also use TaskFlow directly in your browser:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/todo-app.git
+git clone https://github.com/Omprakash267/TaskFlow.git
 cd todo-app
 npm install
 npm run dev
@@ -146,7 +146,7 @@ git tag v1.0.0
 git push origin v1.0.0
 ```
 
-The APK will appear in the [Releases](https://github.com/YOUR_USERNAME/todo-app/releases) page.
+The APK will appear in the [Releases](https://github.com/Omprakash267/TaskFlow/releases) page.
 
 ### Manual (Local Build)
 

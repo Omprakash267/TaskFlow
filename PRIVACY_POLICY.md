@@ -53,7 +53,7 @@ If we update this privacy policy, the changes will be reflected in this document
 
 ## Contact
 
-If you have questions about this privacy policy, please open an issue on the [TaskFlow GitHub repository](https://github.com/YOUR_USERNAME/todo-app/issues).
+If you have questions about this privacy policy, please open an issue on the [TaskFlow GitHub repository](https://github.com/Omprakash267/TaskFlow/issues).
 
 ---
 
