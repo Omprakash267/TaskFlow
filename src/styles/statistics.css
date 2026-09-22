@@ -1,0 +1,222 @@
+/* ==========================================================================
+   STATISTICS PAGE (Clean, Fresh & Professional)
+   ========================================================================== */
+
+.statistics-page .stats-grid {
+  margin-bottom: 24px;
+}
+
+.stat-section {
+  margin-bottom: 24px;
+}
+
+/* Progress Card */
+.progress-card {
+  background: var(--bg-card);
+  padding: 20px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.progress-pct {
+  font-size: 1.875rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.progress-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 10px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+}
+
+/* Weekly 7-Day Chart */
+.weekly-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  background: var(--bg-card);
+  padding: 20px 16px 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+  height: 200px;
+}
+
+.weekly-bar-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.weekly-bar-container:hover {
+  transform: translateY(-2px);
+}
+
+.weekly-bar-value {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.weekly-bar-track {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  padding: 0 4px;
+}
+
+.weekly-bar-fill {
+  width: 100%;
+  max-width: 32px;
+  background: var(--primary-light);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: height 0.4s ease;
+}
+
+.weekly-bar-today {
+  background: var(--primary);
+}
+
+.weekly-bar-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  margin-top: 6px;
+}
+
+.weekly-label-today {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+/* Category Stats */
+.category-list {
+  background: var(--bg-card);
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+}
+
+.category-stat-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 0;
+}
+
+.category-stat-row:not(:last-child) {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.category-stat-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.category-stat-bar-track {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.category-stat-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+}
+
+/* Habit & Streak Stats Grid */
+.habit-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .habit-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.habit-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-card);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+  transition: all 0.2s ease;
+}
+
+.habit-stat-card:hover {
+  border-color: var(--text-tertiary);
+  transform: translateY(-1px);
+}
+
+.habit-stat-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.habit-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.habit-stat-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.habit-stat-lbl {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+

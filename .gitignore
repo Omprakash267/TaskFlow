@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Android (Capacitor)
+android/app/build/
+android/.gradle/
+android/build/
+*.apk
+*.aab
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Analysis
+project_analysis.txt
+
+# Scratch files
+scratch/
+
+# Vite temp files
+*.timestamp-*
+
+# Signing keystores (keep secure, never commit)
+*.keystore
+*.jks
+
+# Project documentation PDF (too large for git)
+*.pdf
