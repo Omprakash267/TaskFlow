@@ -12,9 +12,6 @@ jobs:
     name: Build Debug APK
     runs-on: ubuntu-latest
 
-    env:
-      ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
