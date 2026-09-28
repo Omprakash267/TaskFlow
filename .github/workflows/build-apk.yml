@@ -12,6 +12,9 @@ jobs:
     name: Build Debug APK
     runs-on: ubuntu-latest
 
+    env:
+      ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,11 +31,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Accept Android SDK licenses
-        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
-
-      - name: Install Android SDK platform
-        run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-36" "build-tools;36.0.0"
+      - name: Set up Android SDK
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> $GITHUB_ENV
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses > /dev/null 2>&1 || true
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-36" "build-tools;36.0.0"
+          echo "Installed SDK platforms:"
+          ls $ANDROID_HOME/platforms/ 2>/dev/null || echo "No platforms dir"
+          echo "Installed build-tools:"
+          ls $ANDROID_HOME/build-tools/ 2>/dev/null || echo "No build-tools dir"
 
       - name: Install dependencies
         run: npm ci
@@ -44,14 +52,14 @@ jobs:
         run: echo "sdk.dir=$ANDROID_HOME" > android/local.properties
 
       - name: Sync Capacitor
-        run: npx cap sync android
+        run: npx cap sync android --verbose 2>&1 || { echo "::error::cap sync failed"; exit 1; }
 
       - name: Make Gradlew executable
         run: chmod +x android/gradlew
 
       - name: Build Debug APK
         working-directory: android
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --stacktrace
 
       - name: Rename APK
         run: |
