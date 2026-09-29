@@ -57,11 +57,12 @@ jobs:
       - name: Build Debug APK
         working-directory: android
         run: |
-          if ! ./gradlew assembleDebug --stacktrace 2>&1 | tee ../gradle_build.log; then
+          set -o pipefail
+          if ! ./gradlew :app:assembleDebug --stacktrace 2>&1 | tee ../gradle_build.log; then
             echo "::group::Full Gradle Log"
             cat ../gradle_build.log
             echo "::endgroup::"
-            ERR=$(grep -E -A 6 "\* What went wrong:|\* Exception is:" ../gradle_build.log | tr '\r\n' ' ' | head -c 500)
+            ERR=$(grep -E -A 5 "\* What went wrong:|\* Exception is:" ../gradle_build.log | tr '\r\n' ' ' | head -c 500)
             if [ -z "$ERR" ]; then
               ERR=$(tail -n 20 ../gradle_build.log | tr '\r\n' ' ' | head -c 500)
             fi
