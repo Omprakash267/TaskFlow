@@ -76,15 +76,25 @@ jobs:
           name: gradle-build-log
           path: gradle_build.log
 
-      - name: Rename APK
+      - name: Prepare APK artifact
         run: |
-          mv android/app/build/outputs/apk/debug/app-debug.apk android/app/build/outputs/apk/debug/TaskFlow.apk
+          echo "Locating built APK..."
+          find android/app/build/ -name "*.apk" -ls
+          APK_PATH=$(find android/app/build/ -name "*.apk" | head -n 1)
+          if [ -z "$APK_PATH" ]; then
+            echo "::error::No APK found in android/app/build/"
+            exit 1
+          fi
+          echo "Found APK at: $APK_PATH"
+          mkdir -p build-output
+          cp "$APK_PATH" build-output/TaskFlow.apk
+          ls -la build-output/
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: TaskFlow-APK
-          path: android/app/build/outputs/apk/debug/TaskFlow.apk
+          path: build-output/TaskFlow.apk
 
   release:
     name: Create Release with APK
